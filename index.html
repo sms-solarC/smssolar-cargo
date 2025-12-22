@@ -4,21 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Frases Favoritas</title>
+    <title>Mi Sitio con Logo</title>
     <style>
-        /* Aquí definimos los colores y estilos */
+        /* 1. Estilos para la barra superior */
+        .barra-superior {
+            background-color: #e3f2fd; /* Azul claro */
+            width: 100%;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed; /* Mantiene la barra arriba al hacer scroll */
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 40px; /* Tamaño del logo */
+            margin-right: 15px;
+        }
+
+        .titulo-logo {
+            color: #0d47a1; /* Azul oscuro para el texto del logo */
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* 2. Ajustes al resto de la página */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5; /* Color de fondo de la página */
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding-top: 100px; /* Espacio para que el contenido no quede debajo de la barra */
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 50px;
-        }
-
-        h1 {
-            color: #333;
-            border-bottom: 2px solid #007bff;
         }
 
         .contenedor {
@@ -27,45 +49,29 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             max-width: 500px;
+            width: 90%;
         }
 
-        .frase-azul {
-            color: #007bff;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .frase-rosa {
-            color: #e91e63;
-            font-style: italic;
-            font-size: 1.2rem;
-        }
-
-        .frase-verde {
-            color: #28a745;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        p {
-            margin: 15px 0;
-            line-height: 1.6;
-        }
+        .frase-azul { color: #007bff; font-weight: bold; font-size: 1.2rem; }
     </style>
 </head>
 <body>
 
-    <h1>Bienvenido a mi sitio de GitHub</h1>
+    <!-- CAJA SUPERIOR (HEADER) -->
+    <header class="barra-superior">
+        <!-- Reemplaza la URL en 'src' con tu propio logo después -->
+        <img src="github.githubassets.com" alt="Logo" class="logo">
+        <h2 class="titulo-logo">Mi Portafolio</h2>
+    </header>
+
+    <h1>Frases del 2025</h1>
 
     <div class="contenedor">
-        <p class="frase-azul">"El único modo de hacer un gran trabajo es amar lo que haces."</p>
-        
-        <p class="frase-rosa">"La creatividad es la inteligencia divirtiéndose."</p>
-        
-        <p class="frase-verde">"Hazlo simple, pero significativo."</p>
-
-        <p style="color: orange; font-size: 14px;">— Esta frase tiene color directo sin usar clases.</p>
+        <p class="frase-azul">"El código es como el humor; cuando tienes que explicarlo, es malo."</p>
+        <p style="color: #666;">Bienvenido a mi sitio actualizado con una barra de navegación.</p>
     </div>
 
 </body>
+</html>
+
 </html>
