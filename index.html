@@ -1,77 +1,122 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio con Logo</title>
+    <title>Tu Marca | Identidad Corporativa</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="cdn.jsdelivr.net" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="fonts.googleapis.com" rel="stylesheet">
+    
     <style>
-        /* 1. Estilos para la barra superior */
-        .barra-superior {
-            background-color: #e3f2fd; /* Azul claro */
-            width: 100%;
-            padding: 15px 30px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: fixed; /* Mantiene la barra arriba al hacer scroll */
-            top: 0;
-            left: 0;
-            z-index: 1000;
+        :root {
+            /* CAMBIA AQUÍ TUS COLORES CORPORATIVOS */
+            --color-primario: #1a237e; /* Azul oscuro (ejemplo) */
+            --color-secundario: #0d47a1;
+            --color-acento: #ffc107;
+            --fuente-principal: 'Inter', sans-serif;
         }
 
-        .logo {
-            height: 100px; /* Tamaño del logo */
-            margin-right: 50px;
+        body { font-family: var(--fuente-principal); color: #333; }
+
+        .navbar {
+            background-color: var(--color-primario);
+            border-bottom: 3px solid var(--color-acento);
         }
 
-        .titulo-logo {
-            color: #0d47a1; /* Azul oscuro para el texto del logo */
-            font-size: 1.5rem;
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('images.unsplash.com'); /* Cambia esta URL por tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .btn-custom {
+            background-color: var(--color-acento);
+            color: #000;
             font-weight: bold;
-            margin: 0;
+            border: none;
         }
 
-        /* 2. Ajustes al resto de la página */
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f0f2f5;
-            margin: 0;
-            padding-top: 100px; /* Espacio para que el contenido no quede debajo de la barra */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .section-title {
+            border-left: 5px solid var(--color-acento);
+            padding-left: 15px;
+            margin-bottom: 30px;
         }
-
-        .contenedor {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 500px;
-            width: 90%;
-        }
-
-        .frase-azul { color: #007bff; font-weight: bold; font-size: 1.2rem; }
     </style>
 </head>
 <body>
 
-    <!-- CAJA SUPERIOR (HEADER) -->
-    <header class="barra-superior">
-        <!-- Reemplaza la URL en 'src' con tu propio logo después -->
-        <img src="logo.png" alt="Logo" class="logo">
-        <h2 class="titulo-logo">SITIO WEB PARA LA SEGURIDAD OPERACIONAL SOLAR CARGO C.A!</h2>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">TU LOGOTIPO</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Inicio -->
+    <header id="inicio" class="hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Gestión Estelar de Tu Marca</h1>
+            <p class="lead">Soluciones profesionales adaptadas a la nueva era digital 2025.</p>
+            <a href="#contacto" class="btn btn-custom btn-lg mt-3">Saber más</a>
+        </div>
     </header>
 
-    <h1></h1>
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <section id="servicios">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5>Consultoría Estratégica</h5>
+                            <p>Análisis profundo para el crecimiento de su organización.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5>Gestión de Seguridad</h5>
+                            <p>Protocolos avanzados cumpliendo normativas internacionales.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5>Soporte Técnico</h5>
+                            <p>Asistencia especializada 24/7 para procesos críticos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="contenedor">
-        <p class="frase-azul">"Sitio Web en contrucción"</p>
-        <p style="color: #666;">Bienvenido a mi sitio actualizado con una barra de navegación.</p>
-    </div>
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2025 Tu Nombre o Empresa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="cdn.jsdelivr.net"></script>
 </body>
 </html>
 
-</html>
+
