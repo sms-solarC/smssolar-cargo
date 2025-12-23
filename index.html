@@ -3,58 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Marca | Identidad Corporativa</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>Tu Marca Corporativa | 2025</title>
+    
+    <!-- Bootstrap 5 para estructura profesional -->
     <link href="cdn.jsdelivr.net" rel="stylesheet">
-    <!-- Google Fonts -->
+    <!-- Iconos de Google -->
     <link href="fonts.googleapis.com" rel="stylesheet">
     
     <style>
+        /* --- 1. IDENTIDAD CORPORATIVA (CAMBIA LOS COLORES AQUÍ) --- */
         :root {
-            /* CAMBIA AQUÍ TUS COLORES CORPORATIVOS */
-            --color-primario: #1a237e; /* Azul oscuro (ejemplo) */
-            --color-secundario: #0d47a1;
-            --color-acento: #ffc107;
-            --fuente-principal: 'Inter', sans-serif;
+            --primario: #003366;       /* Color de fondo del menú y botones */
+            --secundario: #00a8e8;     /* Color de acento / detalles */
+            --texto-claro: #ffffff;
+            --fondo-gris: #f8f9fa;
         }
 
-        body { font-family: var(--fuente-principal); color: #333; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; }
 
+        /* --- 2. NAVEGACIÓN --- */
         .navbar {
-            background-color: var(--color-primario);
-            border-bottom: 3px solid var(--color-acento);
+            background-color: var(--primario) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        .nav-link { color: var(--texto-claro) !important; font-weight: 500; }
+        .nav-link:hover { color: var(--secundario) !important; }
 
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('images.unsplash.com'); /* Cambia esta URL por tu imagen de fondo */
+        /* --- 3. SECCIÓN HERO (LA PORTADA) --- */
+        .hero {
+            background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), 
+                        url('images.unsplash.com');
             background-size: cover;
             background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
             color: white;
-            padding: 100px 0;
             text-align: center;
         }
 
-        .btn-custom {
-            background-color: var(--color-acento);
-            color: #000;
-            font-weight: bold;
+        /* --- 4. BOTONES FUNCIONALES --- */
+        .btn-principal {
+            background-color: var(--secundario);
+            color: white;
+            border-radius: 30px;
+            padding: 12px 30px;
             border: none;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-principal:hover {
+            background-color: white;
+            color: var(--primario);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
-        .section-title {
-            border-left: 5px solid var(--color-acento);
-            padding-left: 15px;
-            margin-bottom: 30px;
+        /* --- 5. TARJETAS DE SERVICIOS (COMO SMSOMAESTELAR) --- */
+        .card-servicio {
+            border: none;
+            border-radius: 15px;
+            transition: 0.4s;
+            background: white;
+            padding: 20px;
         }
+        .card-servicio:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-bottom: 5px solid var(--secundario);
+        }
+        .icon-box {
+            color: var(--secundario);
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        /* --- 6. CONTACTO --- */
+        #contacto { background-color: var(--fondo-gris); padding: 80px 0; }
+        .form-control { border-radius: 10px; padding: 12px; }
     </style>
 </head>
 <body>
 
-    <!-- Navegación -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">TU LOGOTIPO</a>
+            <a class="navbar-brand fw-bold text-white" href="#">TU LOGOTIPO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
@@ -65,57 +103,97 @@
         </div>
     </nav>
 
-    <!-- Hero / Inicio -->
-    <header id="inicio" class="hero-section">
+    <!-- SECCIÓN INICIO -->
+    <section id="inicio" class="hero">
         <div class="container">
-            <h1 class="display-3 fw-bold">Gestión Estelar de Tu Marca</h1>
-            <p class="lead">Soluciones profesionales adaptadas a la nueva era digital 2025.</p>
-            <a href="#contacto" class="btn btn-custom btn-lg mt-3">Saber más</a>
+            <h1 class="display-3 fw-bold">Bienvenido a la Nueva Identidad</h1>
+            <p class="fs-4 mb-4">Soluciones de gestión empresarial de alto impacto para 2025.</p>
+            <a href="#contacto" class="btn-principal">Contactar Ahora</a>
         </div>
-    </header>
+    </section>
 
-    <!-- Contenido Principal -->
-    <main class="container my-5">
-        <section id="servicios">
-            <h2 class="section-title">Nuestros Servicios</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5>Consultoría Estratégica</h5>
-                            <p>Análisis profundo para el crecimiento de su organización.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5>Gestión de Seguridad</h5>
-                            <p>Protocolos avanzados cumpliendo normativas internacionales.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5>Soporte Técnico</h5>
-                            <p>Asistencia especializada 24/7 para procesos críticos.</p>
-                        </div>
-                    </div>
+    <!-- SECCIÓN SERVICIOS -->
+    <section id="servicios" class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Nuestros Servicios Especializados</h2>
+            <div style="width: 60px; height: 4px; background: var(--secundario); margin: 10px auto;"></div>
+        </div>
+        
+        <div class="row g-4 text-center">
+            <!-- Servicio 1 -->
+            <div class="col-md-4">
+                <div class="card-servicio shadow-sm">
+                    <span class="material-icons icon-box">assignment_turned_in</span>
+                    <h4>Gestión de Calidad</h4>
+                    <p>Implementamos sistemas basados en normas internacionales para optimizar su negocio.</p>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <!-- Pie de página -->
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p>&copy; 2025 Tu Nombre o Empresa. Todos los derechos reservados.</p>
+            <!-- Servicio 2 -->
+            <div class="col-md-4">
+                <div class="card-servicio shadow-sm">
+                    <span class="material-icons icon-box">security</span>
+                    <h4>Seguridad Laboral</h4>
+                    <p>Protegemos su activo más valioso con protocolos de seguridad de vanguardia.</p>
+                </div>
+            </div>
+            <!-- Servicio 3 -->
+            <div class="col-md-4">
+                <div class="card-servicio shadow-sm">
+                    <span class="material-icons icon-box">trending_up</span>
+                    <h4>Auditoría Estelar</h4>
+                    <p>Evaluamos procesos para garantizar la máxima rentabilidad y cumplimiento.</p>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO (FUNCIONAL AL FRONT-END) -->
+    <section id="contacto">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-4">
+                    <h2 class="fw-bold">Hablemos de su proyecto</h2>
+                    <p>Envíenos un mensaje y nos pondremos en contacto en menos de 24 horas.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 bg-white p-5 shadow rounded">
+                    <form id="miFormulario">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Nombre Completo" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Correo Electrónico" required>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" rows="4" placeholder="¿En qué podemos ayudarle?" required></textarea>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn-principal mt-3">Enviar Mensaje</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="py-4 text-center border-top">
+        <p class="text-muted mb-0">© 2025 Tu Nombre / Empresa. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Bootstrap JS -->
+    <!-- SCRIPTS PARA FUNCIONALIDAD -->
     <script src="cdn.jsdelivr.net"></script>
+    <script>
+        // Función para manejar el envío del formulario (Simulado)
+        document.getElementById('miFormulario').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias! Tu mensaje ha sido enviado con éxito (Esta es una simulación).');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
 
