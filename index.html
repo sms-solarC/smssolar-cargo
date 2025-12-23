@@ -3,198 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Marca Corporativa | 2025</title>
+    <title>Sistema de Gestión de Seguridad (SMS) | Tu Empresa</title>
     
-    <!-- Bootstrap 5 para estructura profesional -->
+    <!-- Bootstrap 5.3 para Diseño Responsivo -->
     <link href="cdn.jsdelivr.net" rel="stylesheet">
-    <!-- Iconos de Google -->
+    <!-- Iconos Profesionales -->
     <link href="fonts.googleapis.com" rel="stylesheet">
     
     <style>
-        /* --- 1. IDENTIDAD CORPORATIVA (CAMBIA LOS COLORES AQUÍ) --- */
+        /* --- IDENTIDAD CORPORATIVA (Ajusta tus colores aquí) --- */
         :root {
-            --primario: #003366;       /* Color de fondo del menú y botones */
-            --secundario: #00a8e8;     /* Color de acento / detalles */
-            --texto-claro: #ffffff;
-            --fondo-gris: #f8f9fa;
+            --primario: #1b2631;      /* Azul Petróleo muy oscuro */
+            --secundario: #c0392b;    /* Rojo Seguridad (puedes cambiarlo a azul o verde) */
+            --acento: #f39c12;        /* Naranja de advertencia */
+            --fondo: #f4f6f7;
         }
 
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--fondo); }
 
-        /* --- 2. NAVEGACIÓN --- */
-        .navbar {
-            background-color: var(--primario) !important;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .nav-link { color: var(--texto-claro) !important; font-weight: 500; }
-        .nav-link:hover { color: var(--secundario) !important; }
-
-        /* --- 3. SECCIÓN HERO (LA PORTADA) --- */
-        .hero {
-            background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), 
-                        url('images.unsplash.com');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-
-        /* --- 4. BOTONES FUNCIONALES --- */
-        .btn-principal {
-            background-color: var(--secundario);
-            color: white;
-            border-radius: 30px;
-            padding: 12px 30px;
-            border: none;
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-principal:hover {
-            background-color: white;
-            color: var(--primario);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        /* --- 5. TARJETAS DE SERVICIOS (COMO SMSOMAESTELAR) --- */
-        .card-servicio {
-            border: none;
+        /* Estilo de los Botones Principales (Grandes y Claros) */
+        .btn-reporte {
+            padding: 40px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
             border-radius: 15px;
-            transition: 0.4s;
-            background: white;
-            padding: 20px;
-        }
-        .card-servicio:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-bottom: 5px solid var(--secundario);
-        }
-        .icon-box {
-            color: var(--secundario);
-            font-size: 40px;
-            margin-bottom: 15px;
+            transition: all 0.3s;
+            border: none;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* --- 6. CONTACTO --- */
-        #contacto { background-color: var(--fondo-gris); padding: 80px 0; }
-        .form-control { border-radius: 10px; padding: 12px; }
+        .btn-obligatorio { background-color: var(--secundario); color: white; }
+        .btn-voluntario { background-color: var(--primario); color: white; }
+
+        .btn-reporte:hover {
+            transform: translateY(-5px);
+            filter: brightness(1.2);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            color: white;
+        }
+
+        .icon-lg { font-size: 50px; margin-bottom: 10px; }
+
+        /* Estilo de los Formularios en Modales */
+        .modal-header { background-color: var(--primario); color: white; }
+        .form-label { font-weight: 600; color: #2c3e50; }
     </style>
 </head>
 <body>
 
-    <!-- MENÚ DE NAVEGACIÓN -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-white" href="#">TU LOGOTIPO</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
+    <!-- CABECERA -->
+    <nav class="navbar navbar-dark shadow-sm" style="background-color: var(--primario);">
+        <div class="container text-center">
+            <a class="navbar-brand mx-auto fw-bold" href="#">
+                SISTEMA DE GESTIÓN SEGURIDAD OPERACIONAL (SMS)
+            </a>
         </div>
     </nav>
 
-    <!-- SECCIÓN INICIO -->
-    <section id="inicio" class="hero">
-        <div class="container">
-            <h1 class="display-3 fw-bold">Bienvenido a la Nueva Identidad</h1>
-            <p class="fs-4 mb-4">Soluciones de gestión empresarial de alto impacto para 2025.</p>
-            <a href="#contacto" class="btn-principal">Contactar Ahora</a>
+    <div class="container py-5">
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-md-8">
+                <h2 class="fw-bold">Reportes de Seguridad</h2>
+                <p class="text-muted">Seleccione el tipo de reporte que desea consignar. Su contribución fortalece nuestra cultura de seguridad.</p>
+            </div>
         </div>
-    </section>
 
-    <!-- SECCIÓN SERVICIOS -->
-    <section id="servicios" class="container py-5">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">Nuestros Servicios Especializados</h2>
-            <div style="width: 60px; height: 4px; background: var(--secundario); margin: 10px auto;"></div>
-        </div>
-        
-        <div class="row g-4 text-center">
-            <!-- Servicio 1 -->
-            <div class="col-md-4">
-                <div class="card-servicio shadow-sm">
-                    <span class="material-icons icon-box">assignment_turned_in</span>
-                    <h4>Gestión de Calidad</h4>
-                    <p>Implementamos sistemas basados en normas internacionales para optimizar su negocio.</p>
-                </div>
+        <!-- BOTONES DE ACCIÓN (Funcionalidad Principal) -->
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-5">
+                <button class="btn-reporte btn-obligatorio" data-bs-toggle="modal" data-bs-target="#modalObligatorio">
+                    <span class="material-icons icon-lg">report_problem</span>
+                    REPORTE OBLIGATORIO DE SEGURIDAD
+                </button>
+                <p class="text-center mt-2 small text-danger fw-bold">Para incidentes y eventos normativos.</p>
             </div>
-            <!-- Servicio 2 -->
-            <div class="col-md-4">
-                <div class="card-servicio shadow-sm">
-                    <span class="material-icons icon-box">security</span>
-                    <h4>Seguridad Laboral</h4>
-                    <p>Protegemos su activo más valioso con protocolos de seguridad de vanguardia.</p>
-                </div>
-            </div>
-            <!-- Servicio 3 -->
-            <div class="col-md-4">
-                <div class="card-servicio shadow-sm">
-                    <span class="material-icons icon-box">trending_up</span>
-                    <h4>Auditoría Estelar</h4>
-                    <p>Evaluamos procesos para garantizar la máxima rentabilidad y cumplimiento.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- SECCIÓN CONTACTO (FUNCIONAL AL FRONT-END) -->
-    <section id="contacto">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center mb-4">
-                    <h2 class="fw-bold">Hablemos de su proyecto</h2>
-                    <p>Envíenos un mensaje y nos pondremos en contacto en menos de 24 horas.</p>
-                </div>
+            <div class="col-md-5">
+                <button class="btn-reporte btn-voluntario" data-bs-toggle="modal" data-bs-target="#modalVoluntario">
+                    <span class="material-icons icon-lg">volunteer_activism</span>
+                    REPORTE VOLUNTARIO / CONFIDENCIAL
+                </button>
+                <p class="text-center mt-2 small text-muted">Para peligros o condiciones inseguras detectadas.</p>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-8 bg-white p-5 shadow rounded">
-                    <form id="miFormulario">
+        </div>
+    </div>
+
+    <!-- MODAL REPORTE OBLIGATORIO -->
+    <div class="modal fade" id="modalObligatorio" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Formulario de Reporte Obligatorio</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formObligatorio">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Nombre Completo" required>
+                                <label class="form-label">Fecha del Evento</label>
+                                <input type="date" class="form-control" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="Correo Electrónico" required>
+                                <label class="form-label">Lugar / Ubicación</label>
+                                <input type="text" class="form-control" placeholder="Ej: Plataforma 1" required>
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control" rows="4" placeholder="¿En qué podemos ayudarle?" required></textarea>
+                                <label class="form-label">Descripción Detallada del Incidente</label>
+                                <textarea class="form-control" rows="4" placeholder="Describa qué sucedió de forma clara y objetiva..."></textarea>
                             </div>
-                            <div class="col-12 text-center">
-                                <button type="submit" class="btn-principal mt-3">Enviar Mensaje</button>
+                            <div class="col-12">
+                                <label class="form-label">Medidas Inmediatas Tomadas</label>
+                                <textarea class="form-control" rows="2"></textarea>
                             </div>
+                        </div>
+                        <div class="modal-footer mt-3">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-danger">Enviar Reporte Oficial</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- PIE DE PÁGINA -->
-    <footer class="py-4 text-center border-top">
-        <p class="text-muted mb-0">© 2025 Tu Nombre / Empresa. Todos los derechos reservados.</p>
-    </footer>
+    <!-- MODAL REPORTE VOLUNTARIO -->
+    <div class="modal fade" id="modalVoluntario" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: var(--secundario);">
+                    <h5 class="modal-title">Reporte Voluntario (Confidencial)</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formVoluntario">
+                        <div class="alert alert-info">Este reporte es tratado bajo estricta confidencialidad para mejora continua.</div>
+                        <div class="mb-3">
+                            <label class="form-label">Identificación del Peligro Detectado</label>
+                            <input type="text" class="form-control" placeholder="¿Qué condición insegura observó?">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Sugerencia de Mejora</label>
+                            <textarea class="form-control" rows="3" placeholder="¿Cómo cree que podemos evitar un riesgo?"></textarea>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="anonimo">
+                            <label class="form-check-label text-muted" for="anonimo">Deseo que este reporte sea anónimo</label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary" style="background-color: var(--primario);">Enviar Sugerencia</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- SCRIPTS PARA FUNCIONALIDAD -->
+    <!-- SCRIPTS -->
     <script src="cdn.jsdelivr.net"></script>
     <script>
-        // Función para manejar el envío del formulario (Simulado)
-        document.getElementById('miFormulario').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('¡Gracias! Tu mensaje ha sido enviado con éxito (Esta es una simulación).');
-            this.reset();
+        // Manejo de envío (simulación para 2025)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('REPORTE REGISTRADO: El reporte ha sido enviado al oficial de seguridad operacional.');
+                location.reload(); 
+            });
         });
     </script>
 </body>
 </html>
-
-
