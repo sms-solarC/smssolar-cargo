@@ -3,177 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Gestión de Seguridad (SMS) | Tu Empresa</title>
-    
-    <!-- Bootstrap 5.3 para Diseño Responsivo -->
+    <title>Portal SMS | Gestión de Seguridad Operacional</title>
     <link href="cdn.jsdelivr.net" rel="stylesheet">
-    <!-- Iconos Profesionales -->
     <link href="fonts.googleapis.com" rel="stylesheet">
-    
     <style>
-        /* --- IDENTIDAD CORPORATIVA (Ajusta tus colores aquí) --- */
         :root {
-            --primario: #1b2631;      /* Azul Petróleo muy oscuro */
-            --secundario: #c0392b;    /* Rojo Seguridad (puedes cambiarlo a azul o verde) */
-            --acento: #f39c12;        /* Naranja de advertencia */
-            --fondo: #f4f6f7;
+            --corporativo: #002855; /* Azul Profundo */
+            --acento: #00a19d;      /* Verde Teal */
+            --alerta: #d90429;      /* Rojo Emergencia */
+            --fondo: #f8f9fa;
         }
 
-        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--fondo); }
-
-        /* Estilo de los Botones Principales (Grandes y Claros) */
-        .btn-reporte {
-            padding: 40px 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 15px;
-            transition: all 0.3s;
-            border: none;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        body { background-color: var(--fondo); font-family: 'Inter', sans-serif; }
+        
+        .navbar { background: var(--corporativo); border-bottom: 4px solid var(--acento); }
+        
+        .hero-banner {
+            background: linear-gradient(135deg, var(--corporativo) 0%, #004080 100%);
+            color: white; padding: 60px 0; border-radius: 0 0 50px 50px;
         }
 
-        .btn-obligatorio { background-color: var(--secundario); color: white; }
-        .btn-voluntario { background-color: var(--primario); color: white; }
-
-        .btn-reporte:hover {
-            transform: translateY(-5px);
-            filter: brightness(1.2);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            color: white;
+        .card-menu {
+            border: none; border-radius: 20px; transition: 0.3s;
+            height: 100%; cursor: pointer; text-decoration: none; color: inherit;
         }
 
-        .icon-lg { font-size: 50px; margin-bottom: 10px; }
+        .card-menu:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 
-        /* Estilo de los Formularios en Modales */
-        .modal-header { background-color: var(--primario); color: white; }
-        .form-label { font-weight: 600; color: #2c3e50; }
+        .icon-circle {
+            width: 70px; height: 70px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px; color: white;
+        }
     </style>
 </head>
 <body>
 
-    <!-- CABECERA -->
-    <nav class="navbar navbar-dark shadow-sm" style="background-color: var(--primario);">
-        <div class="container text-center">
-            <a class="navbar-brand mx-auto fw-bold" href="#">
-                SISTEMA DE GESTIÓN SEGURIDAD OPERACIONAL (SMS)
+<nav class="navbar navbar-dark py-3">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <span class="material-icons me-2">shield</span>
+            <strong>PORTAL SMS ESTELAR</strong>
+        </a>
+    </div>
+</nav>
+
+<header class="hero-banner text-center">
+    <div class="container">
+        <h1 class="display-5 fw-bold">Sistema de Gestión de Seguridad</h1>
+        <p class="lead">Bienvenido al centro de recursos y reportabilidad de 2025.</p>
+    </div>
+</header>
+
+<div class="container mt-n5" style="margin-top: -40px;">
+    <div class="row g-4 justify-content-center">
+        
+        <!-- SECCIÓN REPORTES -->
+        <div class="col-md-6 col-lg-3">
+            <a href="reporte-obligatorio.html" target="_blank" class="card card-menu p-4">
+                <div class="icon-circle bg-danger shadow">
+                    <span class="material-icons">priority_high</span>
+                </div>
+                <h4>Reporte Obligatorio</h4>
+                <p class="text-muted small">Incidentes que requieren notificación inmediata por norma.</p>
             </a>
         </div>
-    </nav>
 
-    <div class="container py-5">
-        <div class="row justify-content-center text-center mb-5">
-            <div class="col-md-8">
-                <h2 class="fw-bold">Reportes de Seguridad</h2>
-                <p class="text-muted">Seleccione el tipo de reporte que desea consignar. Su contribución fortalece nuestra cultura de seguridad.</p>
-            </div>
+        <div class="col-md-6 col-lg-3">
+            <a href="reporte-voluntario.html" target="_blank" class="card card-menu p-4">
+                <div class="icon-circle bg-primary shadow">
+                    <span class="material-icons">history_edu</span>
+                </div>
+                <h4>Reporte Voluntario</h4>
+                <p class="text-muted small">Identificación de peligros y sugerencias preventivas.</p>
+            </a>
         </div>
 
-        <!-- BOTONES DE ACCIÓN (Funcionalidad Principal) -->
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-5">
-                <button class="btn-reporte btn-obligatorio" data-bs-toggle="modal" data-bs-target="#modalObligatorio">
-                    <span class="material-icons icon-lg">report_problem</span>
-                    REPORTE OBLIGATORIO DE SEGURIDAD
-                </button>
-                <p class="text-center mt-2 small text-danger fw-bold">Para incidentes y eventos normativos.</p>
-            </div>
+        <!-- SECCIÓN CONOCIMIENTO -->
+        <div class="col-md-6 col-lg-3">
+            <a href="#cuestionarios" class="card card-menu p-4">
+                <div class="icon-circle bg-warning shadow">
+                    <span class="material-icons">quiz</span>
+                </div>
+                <h4>Validación de Conocimiento</h4>
+                <p class="text-muted small">Cuestionarios sobre seguridad y normativas 2025.</p>
+            </a>
+        </div>
 
-            <div class="col-md-5">
-                <button class="btn-reporte btn-voluntario" data-bs-toggle="modal" data-bs-target="#modalVoluntario">
-                    <span class="material-icons icon-lg">volunteer_activism</span>
-                    REPORTE VOLUNTARIO / CONFIDENCIAL
-                </button>
-                <p class="text-center mt-2 small text-muted">Para peligros o condiciones inseguras detectadas.</p>
+        <!-- SECCIÓN CASOS PUNTUALES -->
+        <div class="col-md-6 col-lg-3">
+            <a href="#casos" class="card card-menu p-4">
+                <div class="icon-circle bg-success shadow">
+                    <span class="material-icons">library_books</span>
+                </div>
+                <h4>Biblioteca de Casos</h4>
+                <p class="text-muted small">Qué hacer en situaciones específicas y lecciones aprendidas.</p>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<!-- SECCIÓN DE INFORMACIÓN Y CASOS -->
+<div class="container my-5 py-5" id="casos">
+    <h3 class="fw-bold border-start border-4 border-info ps-3 mb-4">Casos de Estudio y Protocolos</h3>
+    <div class="row">
+        <div class="col-md-7">
+            <div class="accordion shadow-sm" id="accCasos">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1">
+                            Caso 01: Derrame de Sustancias Químicas
+                        </button>
+                    </h2>
+                    <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#accCasos">
+                        <div class="accordion-body">
+                            <strong>¿Qué hacer?</strong> 1. Evacuar el área. 2. Notificar al Oficial de Seguridad. 3. Utilizar kit de contención si es seguro.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">
+                            Caso 02: Fallo de Comunicaciones Críticas
+                        </button>
+                    </h2>
+                    <div id="c2" class="accordion-collapse collapse" data-bs-parent="#accCasos">
+                        <div class="accordion-body">
+                            Protocolo de respaldo: Cambiar a frecuencia de emergencia y reportar mediante el formulario obligatorio inmediatamente.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+                <h5 class="fw-bold">Tips de Seguridad Semanal</h5>
+                <ul class="list-group list-group-flush mt-3">
+                    <li class="list-group-item d-flex align-items-center">
+                        <span class="material-icons text-success me-2">check_circle</span> Verifique su EPP antes de iniciar.
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <span class="material-icons text-success me-2">check_circle</span> La seguridad es responsabilidad de todos.
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- MODAL REPORTE OBLIGATORIO -->
-    <div class="modal fade" id="modalObligatorio" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Formulario de Reporte Obligatorio</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="formObligatorio">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label class="form-label">Fecha del Evento</label>
-                                <input type="date" class="form-control" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Lugar / Ubicación</label>
-                                <input type="text" class="form-control" placeholder="Ej: Plataforma 1" required>
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label">Descripción Detallada del Incidente</label>
-                                <textarea class="form-control" rows="4" placeholder="Describa qué sucedió de forma clara y objetiva..."></textarea>
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label">Medidas Inmediatas Tomadas</label>
-                                <textarea class="form-control" rows="2"></textarea>
-                            </div>
-                        </div>
-                        <div class="modal-footer mt-3">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn btn-danger">Enviar Reporte Oficial</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL REPORTE VOLUNTARIO -->
-    <div class="modal fade" id="modalVoluntario" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: var(--secundario);">
-                    <h5 class="modal-title">Reporte Voluntario (Confidencial)</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="formVoluntario">
-                        <div class="alert alert-info">Este reporte es tratado bajo estricta confidencialidad para mejora continua.</div>
-                        <div class="mb-3">
-                            <label class="form-label">Identificación del Peligro Detectado</label>
-                            <input type="text" class="form-control" placeholder="¿Qué condición insegura observó?">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Sugerencia de Mejora</label>
-                            <textarea class="form-control" rows="3" placeholder="¿Cómo cree que podemos evitar un riesgo?"></textarea>
-                        </div>
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" id="anonimo">
-                            <label class="form-check-label text-muted" for="anonimo">Deseo que este reporte sea anónimo</label>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary" style="background-color: var(--primario);">Enviar Sugerencia</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SCRIPTS -->
-    <script src="cdn.jsdelivr.net"></script>
-    <script>
-        // Manejo de envío (simulación para 2025)
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('REPORTE REGISTRADO: El reporte ha sido enviado al oficial de seguridad operacional.');
-                location.reload(); 
-            });
-        });
-    </script>
+<script src="cdn.jsdelivr.net"></script>
 </body>
 </html>
