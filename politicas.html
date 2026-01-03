@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas SMS | Solar Cargo</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body class="policies-page">
+
+    <a href="index.html" class="back-home-btn">
+        <span class="material-icons">arrow_back</span>
+        <span>Volver al Inicio</span>
+    </a>
+    <img src="logo.png" alt="Solar Cargo Logo" class="brand-logo">
+
+    <div class="policies-container">
+        <div class="header-container">
+            <h1 class="page-title">POLÍTICAS</h1>
+        </div>
+
+        <div class="policies-grid">
+            <!-- Política 1 -->
+            <div class="policy-card" onclick="openModal('https://placehold.co/600x800/png?text=FOTO+POLITICA+1')">
+                <img src="https://placehold.co/400x550/png?text=Tu+Foto+Aqui+1" alt="Política de Seguridad Placeholder">
+                <div class="policy-overlay">
+                    <!-- Icon removed -->
+                </div>
+                <div class="card-footer">
+                    <h3>Política de Seguridad Operacional</h3>
+                </div>
+            </div>
+
+            <!-- Política 2 -->
+            <div class="policy-card" onclick="openModal('https://placehold.co/600x800/png?text=FOTO+POLITICA+2')">
+                <img src="https://placehold.co/400x550/png?text=Tu+Foto+Aqui+2" alt="Política de Reportes Placeholder">
+                <div class="policy-overlay">
+                    <!-- Icon removed -->
+                </div>
+                <div class="card-footer">
+                    <h3>Política de Reportes</h3>
+                </div>
+            </div>
+
+            <!-- Política 3 -->
+            <div class="policy-card" onclick="openModal('https://placehold.co/600x800/png?text=FOTO+POLITICA+3')">
+                <img src="https://placehold.co/400x550/png?text=Tu+Foto+Aqui+3" alt="Política Justa Placeholder">
+                <div class="policy-overlay">
+                    <!-- Icon removed -->
+                </div>
+                <div class="card-footer">
+                    <h3>Política de "Just Culture"</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        function openModal(src) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("img01");
+            modal.style.display = "flex";
+            modalImg.src = src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        // Close modal if user clicks outside content
+        window.onclick = function (event) {
+            var modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

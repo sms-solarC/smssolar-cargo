@@ -1,0 +1,945 @@
+/* ==========================================================================
+   GLOBAL SETTINGS & VARIABLES
+   ========================================================================== */
+:root {
+    /* Color Palette */
+    --primary-blue: #4facfe;
+    /* Used in headings */
+    --accent-blue: #122348;
+    /* Used in buttons and backgrounds */
+    --text-white: #ffffff;
+
+    /* Gradients */
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+    /* Border Radius */
+    --radius-lg: 1rem;
+
+    /* Fonts */
+    --font-main: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+
+    /* Card Styles */
+    --card-bg: rgba(255, 255, 255, 0.95);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--text-white);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+}
+
+/* ==========================================================================
+   SHARED SHARED COMPONENTS
+   ========================================================================== */
+
+/* Brand Logo (Used in forms and policies pages) */
+.brand-logo {
+    position: fixed;
+    top: 25px;
+    /* Adjusted for consistency */
+    left: 30px;
+    width: 180px;
+    height: auto;
+    z-index: 100;
+    mix-blend-mode: multiply;
+    /* Removes white background visually */
+}
+
+/* Back Link Button */
+.back-home-btn {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 100;
+    background: rgba(18, 35, 72, 0.8);
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    box-shadow: var(--shadow-sm);
+    font-size: 0.9rem;
+}
+
+.back-home-btn:hover {
+    background: rgba(18, 35, 72, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.back-home-btn .material-icons {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+/* ==========================================================================
+   INDEX PAGE STYLES
+   ========================================================================== */
+
+/* Index Page Overlay */
+body.index-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #ffffff;
+    box-shadow: var(--shadow-sm);
+}
+
+.logo-container img {
+    height: 60px;
+    mix-blend-mode: normal;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+    max-width: 800px;
+}
+
+.welcome-text {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.main-title span {
+    color: var(--primary-blue);
+}
+
+/* Action Menu Buttons */
+.action-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.menu-btn {
+    background-color: var(--primary-blue);
+    color: white;
+    text-decoration: none;
+    padding: 18px 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-btn:hover {
+    background-color: var(--accent-blue);
+    transform: translateX(10px);
+    border-color: rgba(255, 255, 255, 0.355);
+}
+
+.menu-btn .arrow {
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ==========================================================================
+   POLICIES PAGE STYLES
+   ========================================================================== */
+
+/* Policies Page Overlay */
+body.policies-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient: Transparent top for logo visibility, dark bottom for content */
+    background: linear-gradient(to bottom, rgba(18, 35, 72, 0.4) 0%, rgba(18, 35, 72, 0.95) 20%);
+    z-index: -1;
+}
+
+.policies-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 40px 20px;
+    /* Added top padding to clear fixed logo */
+    width: 100%;
+}
+
+.header-container {
+    text-align: center;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+}
+
+/* Policies Grid */
+.policies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.policy-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 350px;
+}
+
+.policy-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-blue);
+}
+
+.policy-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.policy-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+}
+
+.policy-card:hover .policy-overlay {
+    opacity: 1;
+}
+
+.card-footer {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.card-footer h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Modal / Lightbox */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    animation: zoom 0.6s;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--primary-blue);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* ==========================================================================
+   FORM PAGES STYLES
+   ========================================================================== */
+
+/* Form Wrapper Card */
+.google-form-wrapper {
+    width: 100%;
+    max-width: 640px;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    height: 90vh;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+/* Form page body centering override */
+body.form-page {
+    /* Restore centering for single-card pages */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Iframe Styling */
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.google-form-wrapper {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Navbar Mobile */
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    /* Index Page Mobile */
+    .main-content {
+        padding: 0 20px;
+        text-align: center;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .action-menu {
+        width: 100%;
+    }
+
+    body {
+        background-position: left center;
+    }
+
+    /* Policies Page Mobile */
+    .page-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Global Mobile Adjustments */
+    body {
+        padding: 0;
+        /* Align items flex-start mainly for forms, 
+           but careful not to break center alignment for index */
+    }
+
+    body.form-page {
+        align-items: flex-start;
+    }
+
+    /* Brand Logo Mobile */
+    .brand-logo {
+        width: 120px;
+        top: 15px;
+        left: 15px;
+    }
+
+    /* Back Button Mobile */
+    .back-home-btn {
+        top: 15px;
+        right: 15px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+
+    .google-form-wrapper {
+        height: calc(100vh - 70px);
+        margin-top: 70px;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        max-width: 100%;
+    }
+}
+
+/* ==========================================================================
+   INFORMATION PAGE STYLES
+   ========================================================================== */
+
+.info-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    /* Glass effect */
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.info-text {
+    flex: 1;
+}
+
+.info-text h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.info-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+.info-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.info-image img {
+    max-width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Strategies Section */
+.strategies-container {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.strategies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.strategy-card {
+    background: rgba(18, 35, 72, 0.8);
+    /* Darker blue background */
+    padding: 30px 20px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.strategy-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary-blue);
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background: rgba(79, 172, 254, 0.2);
+    /* Semi-transparent blue */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    border: 2px solid var(--primary-blue);
+}
+
+.icon-circle .material-icons {
+    font-size: 40px;
+    color: var(--primary-blue);
+}
+
+.strategy-card h3 {
+    margin-bottom: 15px;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.strategy-card p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Response Plans Section */
+.response-plans-section {
+    background: linear-gradient(135deg, rgba(18, 35, 72, 0.95) 0%, rgba(10, 20, 40, 0.95) 100%);
+    border-radius: var(--radius-lg);
+    padding: 50px;
+    text-align: center;
+    border: 1px solid var(--primary-blue);
+    box-shadow: 0 0 30px rgba(79, 172, 254, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.response-content h2 {
+    font-size: 2.2rem;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.response-content .subtitle {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.response-content p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    background: var(--primary-blue);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.action-btn:hover {
+    background: #2a8bf2;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   3D GRID LAYOUT FOR ACTION CARDS
+   ========================================================================== */
+
+.grid-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    /* Flex is used in reference instead of Grid */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.card__father {
+    margin: 20px;
+    perspective: 1000px;
+}
+
+.card__father:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card {
+    width: 350px;
+    height: 400px;
+    /* Adjust height as needed for content */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 600ms;
+}
+
+.card__front,
+.card__back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card__front {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Text at bottom */
+    align-items: center;
+    padding: 20px;
+    /* Add a gradient overlay so text is readable */
+}
+
+/* Add an overlay to front card images to make text pop */
+.card__front::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%);
+    z-index: 1;
+}
+
+.card__front .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.card__front h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 2;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card__back {
+    background: #fff;
+    /* White background for text */
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    color: #333;
+}
+
+.card__back ol {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.card__back li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Placeholder styles for back content */
+.card__back h3 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Responsiveness for 3D Cards */
+@media (max-width: 480px) {
+    .card {
+        width: 300px;
+        height: 380px;
+    }
+}
+
+/* Response Plans Section Action Cards Grid */
+.action-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.action-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+    margin-bottom: 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon img {
+    max-height: 100%;
+    width: auto;
+}
+
+.action-card h3 {
+    color: #f7b731;
+    /* Golden/Orange color as per reference */
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.action-card p {
+    color: #444;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    /* Ensures buttons align at bottom */
+}
+
+.card-btn {
+    background-color: var(--accent-blue);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.card-btn:hover {
+    background-color: var(--primary-blue);
+}
+
+/* Mobile Adjustments for Info Page */
+@media (max-width: 768px) {
+
+    .info-section,
+    .info-section.reverse {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .info-text h2 {
+        text-align: center;
+    }
+
+    .response-plans-section {
+        padding: 30px 20px;
+    }
+
+    .response-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ==========================================================================
+   FOOTER STYLES
+   ========================================================================== */
+
+.main-footer {
+    background: transparent;
+    color: white;
+    padding: 20px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    gap: 30px;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 200px;
+}
+
+.footer-section .material-icons {
+    font-size: 2rem;
+    color: var(--accent-blue);
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #f0f0f0;
+    font-weight: 400;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}

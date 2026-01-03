@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Nuevo Reporte Voluntario</title>
-    <link href="cdn.jsdelivr.net" rel="stylesheet">
-    <style>
-        body { background: #e9ecef; padding: 40px; }
-        .form-container { background: white; padding: 30px; border-radius: 15px; border-top: 8px solid #0d6efd; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Obligatorio</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link href="styles.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <div class="form-container shadow mx-auto" style="max-width: 700px;">
-            <h2 class="text-primary fw-bold">Reporte Voluntario / Preventivo</h2>
-            <p class="text-muted small italic">Su identidad será protegida bajo normas de confidencialidad.</p>
-            <hr>
-            <form>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Peligro Detectado</label>
-                    <input type="text" class="form-control" placeholder="Ej: Falta de iluminación en rampa">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Sugerencia de Mitigación</label>
-                    <textarea class="form-control" rows="4" placeholder="¿Cómo podemos evitar un riesgo?"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary w-100 fw-bold">ENVIAR SUGERENCIA PREVENTIVA</button>
-            </form>
-        </div>
+
+<body class="form-page">
+    <a href="index.html" class="back-home-btn">
+        <span class="material-icons">arrow_back</span>
+        <span>Volver al Inicio</span>
+    </a>
+    <img src="logo.png" alt="Solar Cargo Logo" class="brand-logo">
+    <div class="google-form-wrapper">
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeGhOyg0VZkj9kojjok20EYA-XAIxN3y4ajcG_Hl_8EgKxg2A/viewform?embedded=true"
+            title="Formulario de Reporte" allowfullscreen>
+        </iframe>
     </div>
 </body>
+
 </html>
