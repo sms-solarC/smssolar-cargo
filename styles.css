@@ -34,7 +34,7 @@
 
 body {
     font-family: var(--font-main);
-    background-image: url('background.jpg');
+    background-image: url('fondo.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -942,4 +942,5 @@ iframe {
         flex-direction: column;
         align-items: center;
     }
+
 }
