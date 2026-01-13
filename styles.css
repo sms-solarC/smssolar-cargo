@@ -133,7 +133,7 @@ body.index-page::before {
     flex-direction: column;
     justify-content: center;
     padding: 0 50px;
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 .welcome-text {
@@ -145,7 +145,7 @@ body.index-page::before {
 }
 
 .main-title {
-    font-size: 3.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 40px;
@@ -944,5 +944,6 @@ iframe {
     }
 
 }
+
 
 
