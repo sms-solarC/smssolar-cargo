@@ -60,6 +60,26 @@
             </div>
         </div>
 
+        <!-- Promoción Section -->
+<div class="promotion-section">
+    <h2 class="section-title">PROMOCIÓN</h2>
+    <div class="promotion-gallery">
+        <!-- Imágenes con evento onclick -->
+        <img src="images/promocion_1.jpg" alt="..." onclick="openModal(this)">
+        <img src="images/promocion_2.jpg" alt="..." onclick="openModal(this)">
+        <img src="images/promocion_2.jpg" alt="..." onclick="openModal(this)">
+        <img src="images/promocion_2.jpg" alt="..." onclick="openModal(this)">
+        <img src="images/promocion_2.jpg" alt="..." onclick="openModal(this)">
+        <img src="images/promocion_2.jpg" alt="..." onclick="openModal(this)">
+        <img src="images/promocion_2.jpg" alt="..." onclick="openModal(this)">
+        <img src="images/promocion_2.jpg" alt="..." onclick="openModal(this)">
+        <img src="images/promocion_2.jpg" alt="..." onclick="openModal(this)">
+        <img src="images/promocion_2.jpg" alt="..." onclick="openModal(this)">
+        <img src="images/promocion_2.jpg" alt="..." onclick="openModal(this)">
+        <img src="images/promocion_2.jpg" alt="..." onclick="openModal(this)">
+        <!-- ... resto de las 12 imágenes ... -->
+    </div>
+</div>
         <!-- Estrategias Section -->
         <div class="strategies-container">
             <h2 class="section-title">NUESTRAS ESTRATEGIAS</h2>
@@ -200,11 +220,26 @@
         </div>
 
     </div>
-
+<!-- The Modal (Ventana Oculta) -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
+</div>
+<script>
+    function openModal(element) {
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        modal.style.display = "flex"; // Muestra el modal
+        modalImg.src = element.src;   // Pone la imagen grande
+    }
+    // ... funciones para cerrar ...
+</script>
+    
 </body>
 
 
 </html>
+
 
 
 
