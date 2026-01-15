@@ -659,6 +659,23 @@ iframe {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+.promotion-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.promotion-gallery img {
+    /* ... estilos base ... */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Manito al pasar el mouse */
+}
+.promotion-gallery img:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary-blue);
+}
 /* ==========================================================================
    3D GRID LAYOUT FOR ACTION CARDS
    ========================================================================== */
@@ -944,6 +961,7 @@ iframe {
     }
 
 }
+
 
 
 
