@@ -98,7 +98,15 @@ body {
 /* ==========================================================================
    INDEX PAGE STYLES
    ========================================================================== */
-
+.top-right-logo {
+    /* ... posición y tamaño ... */
+    
+    /* 1. INVERTIR: Convierte lo oscuro a BLANCO y el fondo blanco a NEGRO puro */
+    filter: invert(1);
+    
+    /* 2. MEZCLAR: Hace que el color NEGRO se vuelva 100% transparente invisible */
+    mix-blend-mode: screen; 
+}
 /* Index Page Overlay */
 body.index-page::before {
     content: '';
@@ -961,6 +969,7 @@ iframe {
     }
 
 }
+
 
 
 
