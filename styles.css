@@ -105,7 +105,7 @@ body {
     top: 20px;    /* Distancia desde el borde de ARRIBA */
     right: 25px;  /* Distancia desde el borde DERECHO */
     /* TAMAÑO */
-    width: 100px; /* ANCHO de la imagen */
+    width: 150px; /* ANCHO de la imagen */
     height: auto; /* La altura se ajusta sola para no deformar el logo */
     
     z-index: 20;  /* Asegura que flote ENCIMA de todo */
@@ -979,6 +979,7 @@ iframe {
     }
 
 }
+
 
 
 
