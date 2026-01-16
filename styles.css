@@ -980,6 +980,29 @@ iframe {
 
 }
 
+/* Galería de Promociones */
+.promotion-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 24px;
+}
+
+.promotion-gallery img {
+    width: 220px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+.promotion-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
 
 
 
