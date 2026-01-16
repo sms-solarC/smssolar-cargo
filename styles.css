@@ -99,7 +99,17 @@ body {
    INDEX PAGE STYLES
    ========================================================================== */
 .top-right-logo {
-    /* ... posición y tamaño ... */
+  position: absolute; /* Permite moverlo libremente */
+    
+    /* POSICIÓN */
+    top: 30px;    /* Distancia desde el borde de ARRIBA */
+    right: 40px;  /* Distancia desde el borde DERECHO */
+    /* TAMAÑO */
+    width: 200px; /* ANCHO de la imagen */
+    height: auto; /* La altura se ajusta sola para no deformar el logo */
+    
+    z-index: 20;  /* Asegura que flote ENCIMA de todo */
+    /* ... aquí siguen los filtros de color ... */ 
     
     /* 1. INVERTIR: Convierte lo oscuro a BLANCO y el fondo blanco a NEGRO puro */
     filter: invert(1);
@@ -969,6 +979,7 @@ iframe {
     }
 
 }
+
 
 
 
