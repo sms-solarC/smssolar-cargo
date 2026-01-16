@@ -62,7 +62,7 @@
 
         <!-- Promoción Section -->
 <div class="promotion-section">
-    <h2 class="section-title">PROMOCIÓN</h2>
+    <h2 class="section-title" style="text-align:center;">PROMOCIÓN</h2>
     <div class="promotion-gallery">
         <!-- Imágenes con evento onclick -->
         <img src="promocion_1.jpg" alt="..." onclick="openModal(this)">
@@ -232,13 +232,18 @@
         modal.style.display = "flex"; // Muestra el modal
         modalImg.src = element.src;   // Pone la imagen grande
     }
-    // ... funciones para cerrar ...
+    function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
 </script>
     
 </body>
 
 
 </html>
+
+
 
 
 
